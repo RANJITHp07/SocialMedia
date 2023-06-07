@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
+import React, { useContext } from "react";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Login from './pages/login/Login';
+import Register from './pages/Register';
+import { Authcontext } from './context/Authcontext';
+import Chat from './pages/Chat';
+import Updateform from './component/updateform/updateform';
+
 
 function App() {
+  const {user}=useContext(Authcontext)
+  const bool=localStorage.getItem("user")
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <Routes>
+    <Route path="/" element={bool?<Home/>:<Login/>} />
+    <Route path="/login" element={<Login/>}/>
+    <Route path="/chat/:username" element={<Chat/>}/>
+    <Route path="/register" element={<Register/>} />
+    <Route path="/profile/:username" element={<Profile/>} />
+    <Route path="/update" element={<Updateform/>} />
+    </Routes>
+  </Router>
   );
 }
 

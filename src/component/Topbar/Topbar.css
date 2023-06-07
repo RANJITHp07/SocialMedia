@@ -1,0 +1,23 @@
+.Barimage{
+    height:40px;
+    width: 40px;
+    border-radius: 50%;
+    align-items: center;
+}
+.logo{
+    font-size:1.8rem;
+    font-weight:bold;
+    margin-left:1.4rem;
+}
+
+.Topbar{
+    color: #ffff
+}
+
+.search{
+    margin-bottom: 3rem;
+    width: 20rem;
+    height: 4rem;
+    margin: auto;
+    
+}

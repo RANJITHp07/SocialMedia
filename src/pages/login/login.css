@@ -1,0 +1,14 @@
+.login{
+    margin-top:10rem;
+}
+
+.lheading h1{
+   font-weight: bolder;
+   font-size: 3rem;
+}
+
+.lform{
+    background-color: #f0f2f5;
+    padding: 2rem;
+    border-radius: 5px;
+}
